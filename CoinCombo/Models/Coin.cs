@@ -22,13 +22,24 @@ namespace CoinCombo
     {
       double changeLeft = _change;
       int numOfQuarters = 0;
+      int numOfDimes = 0;
       if (_change >= .25)
       {
         double doubleNumOfQuarters = changeLeft / .25;
         numOfQuarters = Convert.ToInt32(doubleNumOfQuarters);
         changeLeft = changeLeft % .25;
+        return numOfQuarters;
       }
-      return numOfQuarters;
+      if (changeLeft >= .10)
+      {
+        double doubleNumOfDimes = changeLeft / .10;
+        numOfDimes = Convert.ToInt32(doubleNumOfDimes);
+        changeLeft = changeLeft % .10;
+      }
+      return numOfDimes;
+      // if (changeLeft == 0)
+      // {
+      // }
     }
   }
 }

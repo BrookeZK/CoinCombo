@@ -27,11 +27,21 @@ namespace CoinCombo.Tests
 
     [TestMethod]
     public void
-    HowMuchChange_CalcultatesLowestAmountOfQuarters_double()
+    HowMuchChange_CalcultatesLowestAmountOfQuarters_int()
     {
       Coin newCoin = new Coin(1.37);
       int result = newCoin.HowMuchChange();
       Assert.AreEqual(5, result);
+      Console.WriteLine(result);
+    }
+
+    [TestMethod]
+    public void
+    HowMuchChange_CalcultatesLowestAmountOfDimes_int()
+    {
+      Coin newCoin = new Coin(.24);
+      int result = newCoin.HowMuchChange();
+      Assert.AreEqual(2, result);
       Console.WriteLine(result);
     }
   }
